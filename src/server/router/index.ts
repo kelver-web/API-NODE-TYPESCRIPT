@@ -3,27 +3,18 @@ import { Router } from 'express'
 
 import { CidadesController } from './../controllers'
 
+
+
 const router = Router()
 
 
-router.get('/', (req, res) => {
+
+router.get('/', (_, res) => {
     return res.send('Olá, DEV!')
 })
 
+router.get('/cidades', CidadesController.getAllValidation, CidadesController.getAll)
 router.post('/cidades', CidadesController.createValidation, CidadesController.create)
-
-//router.put('/teste', (req, res) => {})
-
-//router.delete('/teste', (req, res) => {})
-
-
-
-
-
-
-
-
-
 
 
 
